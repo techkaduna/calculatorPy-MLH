@@ -1,0 +1,437 @@
+#: kivy 1.0.9
+
+WindowManager:
+    SelectOperation:
+    EquationWindows:
+    SolveBy2:
+    SolveBy3:
+    Quadratic:
+    About:
+
+
+<SelectOperation>:
+    name: 'SelectOperation'
+    Image:
+        source: 'light.jpg'
+        allow_stretch:True
+        keep_ratio:False
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint:1,.8
+        spacing:'10dp'
+        padding:'10dp'
+        RoundedButton:
+            text: 'Equations'
+            size_hint: 1, None
+            height: '50dp'
+            on_press:
+                app.root.current = 'EquationWindow'
+                root.manager.transition.direction = 'left'
+        Image:
+            source: 'Logo.png'
+            allow_stretch: False
+            keep_ratio: False
+        BoxLayout:
+            size_hint:1,.5
+            spacing:'5dp'
+            RoundedButton:
+                text:'About Us'
+                size_hint: None, None
+                height: '30dp' 
+                on_press:
+                    app.root.current = 'About'
+                    root.manager.transition.direction = 'left'
+            RoundedButton:  
+                text:'FeedBack'
+                size_hint: None, None
+                height: '30dp' 
+
+
+<EquationWindows>:
+    name:  'EquationWindow'
+    Image:
+        source:'light.jpg'
+        allow_stretch:True
+        keep_ratio:False
+    BoxLayout:
+        size_hint:1,1
+        spacing:'10dp'
+        padding:'10dp'
+        orientation: 'vertical'
+        BoxLayout:
+            spacing:'10dp'
+            padding: '10dp'
+            orientation: 'vertical'
+            RoundedButton:
+                text:'Quadratic'
+                size_hint:1,None
+                height:'45dp'
+                on_press: 
+                    app.root.current = 'quadratic'
+                
+            RoundedButton:
+                text:'2 Unknowns'
+                size_hint:1,None
+                height:'45dp'
+                on_press: app.root.current = 'solve_2'
+            RoundedButton:
+                text: '3 Unknowns'
+                size_hint:1,None
+                height:'45dp'
+                on_press: app.root.current = 'solve_3'
+            RoundedButton:
+                text: 'Main Menu'
+                size_hint:1,None
+                height:'45dp'
+                on_press: 
+                    app.root.current = 'SelectOperation'
+                    root.manager.transition.direction = 'right'
+            Label:
+                text:'(c)ElytesTech 2022'
+                font_size:'10dp'
+                color:(232/255,129/255,255/255,.5)
+
+<SolveBy2>:
+    name:'solve_2'
+    Image:
+        source:'light.jpg'
+        allow_stretch:True
+        keep_ratio:False
+    BoxLayout: 
+        orientation:'vertical'
+        GridLayout:
+            cols: 3
+            spacing: '5dp'
+            padding: '5dp'
+            RoundedText:
+                id: a
+                size_hint:None,None
+                width:'60dp'
+                height:'60dp'
+                multiline: False
+                font_size:'40dp'
+            RoundedText:
+                id: b
+                size_hint:None,None
+                width:'60dp'
+                height:'60dp'
+                multiline: False
+                font_size:'40dp'
+            RoundedText:
+                id: c
+                size_hint:None,None
+                width:'60dp'
+                height:'60dp'
+                multiline: False
+                font_size:'40dp'
+            RoundedText:
+                id: d
+                size_hint:None,None
+                width:'60dp'
+                height:'60dp'
+                multiline: False
+                font_size:'40dp'
+            RoundedText:
+                id: e
+                size_hint:None,None
+                width:'60dp'
+                height:'60dp'
+                multiline: False
+                font_size:'40dp'
+            RoundedText:
+                id: f
+                size_hint:None,None
+                width:'60dp'
+                height:'60dp'
+                multiline: False
+                font_size:'40dp'
+            RoundedButton:
+                text: 'Submit'
+                size_hint:None,None
+                width:'80dp'
+                height:'45dp'
+                on_press:root.solve_eqn()
+            RoundedButton:
+                text: 'Back'
+                size_hint:None,None
+                width:'90dp'
+                height:'45dp'
+                on_press:app.root.current = 'EquationWindow'
+        BoxLayout:
+            orientation:'vertical'
+            spacing:'5dp'
+            padding:'5dp'
+            Label:
+                text:'Equation form: Ax+By=C'.upper()
+                font_size:'14dp'
+                color:(232/255,129/255,255/255,.5)
+            RoundedLabel:
+                id:ans_label
+                text:'Answer: '
+                size_hint:1,None
+                height:'60dp'
+                font_size:'12dp'
+            
+
+<SolveBy3>:
+    name:'solve_3'
+    Image:
+        source:'light.jpg'
+        allow_stretch:True
+        keep_ratio:False
+    BoxLayout:
+        orientation:'vertical'
+        padding:'5dp'
+        GridLayout:
+            cols:4
+            spacing: '5dp'
+            padding: '5dp'
+            size_hint:1,.6
+            RoundedText:
+                id: b_0
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_1
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_2
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_3
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_4
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_5
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_6
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_7
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_8
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_9
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_10
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+            RoundedText:
+                id: b_11
+                size_hint:None,None
+                width:'50dp'
+                height:'50dp'
+                multiline: False
+                font_size:'35dp'
+        BoxLayout:
+            orientation:'vertical'
+            size_hint:1,.4
+            spacing:'5dp'
+            padding:'5dp'
+            GridLayout:
+                rows:1
+                spacing:'10dp'
+                RoundedButton:
+                    text: 'Submit'
+                    size_hint:None,None
+                    width:'60dp'
+                    height:'40dp'
+                    on_press: root.solve_eqn()
+                RoundedButton:
+                    text: 'Back'
+                    size_hint:None,None
+                    width:'60dp'
+                    height:'40dp'
+                    on_press:
+                        app.root.current = 'EquationWindow'
+                        root.manager.transition.direction = 'right'
+             
+            RoundedLabel:
+                id:by3_ans
+                text: 
+                    'Equation form Ax+By+Cz=D '+'\n'+'Answer: '
+                font_size:'14dp'
+                size_hint:1,None
+                height:'60dp'
+            
+                         
+<Quadratic>:
+    name:'quadratic'
+    Image:
+        source:'light.jpg'
+        allow_stretch:True
+        keep_ratio:False     
+    BoxLayout:
+        orientation:'vertical'
+        size_hint:1,1
+        padding:'5dp'
+        spacing:'15dp'
+        BoxLayout:
+            orientation:'vertical'
+            spacing:'5dp'
+            Label:   
+                text: 'Equation form: Ax2+Bx+C = 0'
+                font_size:'18dp'
+                color:(232/255,129/255,255/255,.5)
+            GridLayout:
+                rows: 1
+                spacing: '15dp'
+                padding:'15dp'
+                RoundedText:
+                    id:a
+                    multiline:False
+                    size_hint:None,None
+                    width: '60dp'
+                    height: '60dp'
+                    font_size: '40dp'
+                RoundedText:
+                    id:b
+                    multiline:False
+                    size_hint:None,None
+                    width: '60dp'
+                    height: '60dp'
+                    font_size: '40dp'
+                RoundedText:
+                    id:c
+                    multiline:False
+                    size_hint:None,None
+                    width: '60dp'
+                    height: '60dp'
+                    font_size: '40dp'
+            BoxLayout:
+                size_hint:1,.6
+                spacing:'25dp'
+                RoundedButton:
+                    text: 'Submit'
+                    size_hint:None,None
+                    width:'100dp'
+                    height:'50dp'
+                    on_press:root.solve_eqn()
+                RoundedButton:
+                    text: 'Back'
+                    size_hint:None,None
+                    width:'100dp'
+                    height:'50dp'
+                    on_press: 
+                        app.root.current = 'EquationWindow'
+                        root.manager.transition.direction = 'right'
+            RoundedLabel:
+                id:quad_ans
+                text:'Answer: '
+                font_size: '16dp'
+                #text_size: root.width, None
+                #size: self.texture_size
+
+
+<About>:
+    name: 'About'
+    Image:
+        source: 'light.jpg'
+        allow_stretch: True
+        keep_ratio: False
+    
+    BoxLayout:
+        size_hint: 1, .8
+        orientation: 'vertical'
+        ScrollableLabel:
+            text:root.text
+    BoxLayout:
+        size_hint: 1, .1
+        RoundedButton:
+            text: 'Back'
+            size_hint: None, None
+            width: '85dp'
+            height: '45dp'
+            on_press: 
+                app.root.current = 'SelectOperation'
+        
+
+<ScrollableLabel@ScrollView>:
+    text: str('')
+    RoundedLabel:
+        text:root.text
+        font_size: '12dp'
+        text_size: self.width,None
+        size_hint_y: None
+        height: self.texture_size[1] 
+
+<RoundedButton@Button>:
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (232/255,129/255,255/255,.5)
+        RoundedRectangle:
+            size:self.size 
+            pos: self.pos 
+            radius: [8]
+
+<RoundedText@TextInput>:
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (232/255,129/255,255/255,.5)
+        RoundedRectangle:
+            size:self.size 
+            pos: self.pos 
+            radius: [8]
+        
+<RoundedLabel@Label>:
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (232/255,129/255,255/255,.5)
+        RoundedRectangle:
+            size:self.size 
+            pos: self.pos 
+            radius: [10]

@@ -1,0 +1,18 @@
+Our sincere greetings from all of us at ElytesTech.
+    We are greatly thrilled to know that you are using our calculator-CalculatorPy and we hope you get the best from our service. We would
+like to get feedbacks which includes but not limited to complains,recommendations and suggestions about the programs performance in 
+general (including its behaviours on your device.)
+
+    And for our users who are as well developers, we would like to inform you that our program is opensource and contributions as well 
+as helping us fix bugs is really our pleasure as we are committed to serving our users with till utomst satisfaction. Below details 
+the github repository link will be available.Please follow the instructions on the github page so we can process your request as 
+regards your contribution.
+
+    Finally,we would like to appreciate as well as recognise Megida Odafe as the owner of the background images use throughout this
+project. The team also thanks him for his encouragement.
+            CHEERS!
+            Kolawole Andrew
+            Lead Developer
+            ElytesTech Inc.
+                                                                                
+
