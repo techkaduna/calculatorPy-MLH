@@ -90,6 +90,8 @@ class About(Screen):
             f.close()
 
 kv = Builder.load_file('main.kv')
+#Builder.load_file('')
+#Bulder.load_file('')
 class CalcApp(App):
     def build(self):
         Window.size = [250,300]
